@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ALg-V6-74h">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Discover-->
+        <scene sceneID="aLc-mN-m1S">
+            <objects>
+                <viewController id="TDu-yQ-jqO" customClass="DiscoverViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pPK-uc-b7N">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5YX-cp-L6O">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TDu-yQ-jqO" id="PRU-Cs-jZD"/>
+                                    <outlet property="delegate" destination="TDu-yQ-jqO" id="Nyk-hq-bcl"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5YX-cp-L6O" firstAttribute="leading" secondItem="6e8-Vp-h1Z" secondAttribute="leading" id="BwW-so-nda"/>
+                            <constraint firstItem="5YX-cp-L6O" firstAttribute="bottom" secondItem="6e8-Vp-h1Z" secondAttribute="bottom" id="Tfn-zf-VQN"/>
+                            <constraint firstItem="5YX-cp-L6O" firstAttribute="trailing" secondItem="6e8-Vp-h1Z" secondAttribute="trailing" id="XH2-Sg-Knn"/>
+                            <constraint firstItem="5YX-cp-L6O" firstAttribute="top" secondItem="6e8-Vp-h1Z" secondAttribute="top" id="lKw-9I-PzX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6e8-Vp-h1Z"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Discover" id="3H2-vJ-hFd">
+                        <barButtonItem key="rightBarButtonItem" image="share" id="w96-MO-TYM">
+                            <color key="tintColor" red="0.0078431372550000003" green="0.58039215690000001" blue="0.64705882349999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="5YX-cp-L6O" id="mKh-r1-3cL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0T-wY-VmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831.20000000000005" y="36.431784107946029"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="Slj-HW-ikd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ALg-V6-74h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" id="shT-2t-H0X"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1U1-9o-j88">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TDu-yQ-jqO" kind="relationship" relationship="rootViewController" id="xYz-Hr-apk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hJS-wZ-tOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.3999999999999999" y="36.431784107946029"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="discover" width="24" height="24"/>
+        <image name="share" width="24" height="24"/>
+    </resources>
+</document>

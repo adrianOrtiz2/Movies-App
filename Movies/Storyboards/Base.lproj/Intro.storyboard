@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JiB-nM-7iM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Intro View Controller-->
+        <scene sceneID="ilC-ih-g7Y">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6VW-OA-AAP" customClass="IntroViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6U3-GL-C6F"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i2P-o4-fYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="28"/>
+        </scene>
+        <!--Page Intro View Controller-->
+        <scene sceneID="QGu-co-AnZ">
+            <objects>
+                <viewController storyboardIdentifier="Step1ViewController" id="n8f-vx-NJS" customClass="PageIntroViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yLa-PV-cbt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg1" translatesAutoresizingMaskIntoConstraints="NO" id="KhQ-Nu-i1e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4cx-ve-h5R">
+                                <rect key="frame" x="16" y="281" width="343" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies &amp; Series" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGR-5G-YRu">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The world’s most popular and authoritative source for movies and series." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5k3-f1-v9E">
+                                        <rect key="frame" x="0.0" y="64" width="343" height="41"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uaZ-vI-1hD" customClass="AssetButton" customModule="Movies" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.0078431372549019607" green="0.58039215686274503" blue="0.6470588235294118" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="bn6-FZ-P2H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <state key="normal" title="Explore Collection" image="arrow"/>
+                                <connections>
+                                    <action selector="exploreCollection:" destination="n8f-vx-NJS" eventType="touchUpInside" id="irp-cs-e0O"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uaZ-vI-1hD" firstAttribute="leading" secondItem="byM-Zw-pWI" secondAttribute="leading" constant="16" id="461-r5-3I3"/>
+                            <constraint firstItem="4cx-ve-h5R" firstAttribute="centerY" secondItem="yLa-PV-cbt" secondAttribute="centerY" id="4y4-5N-jZs"/>
+                            <constraint firstItem="byM-Zw-pWI" firstAttribute="trailing" secondItem="4cx-ve-h5R" secondAttribute="trailing" constant="16" id="67D-FV-6oE"/>
+                            <constraint firstItem="KhQ-Nu-i1e" firstAttribute="leading" secondItem="yLa-PV-cbt" secondAttribute="leading" id="9g4-hv-JbD"/>
+                            <constraint firstItem="4cx-ve-h5R" firstAttribute="centerX" secondItem="yLa-PV-cbt" secondAttribute="centerX" id="El7-fI-m0b"/>
+                            <constraint firstItem="KhQ-Nu-i1e" firstAttribute="bottom" secondItem="yLa-PV-cbt" secondAttribute="bottom" id="KLI-kl-wr0"/>
+                            <constraint firstItem="byM-Zw-pWI" firstAttribute="bottom" secondItem="uaZ-vI-1hD" secondAttribute="bottom" constant="20" id="cSD-gU-5BY"/>
+                            <constraint firstItem="KhQ-Nu-i1e" firstAttribute="trailing" secondItem="yLa-PV-cbt" secondAttribute="trailing" id="kyW-B3-bZa"/>
+                            <constraint firstItem="4cx-ve-h5R" firstAttribute="leading" secondItem="byM-Zw-pWI" secondAttribute="leading" constant="16" id="lin-oa-FcR"/>
+                            <constraint firstItem="byM-Zw-pWI" firstAttribute="trailing" secondItem="uaZ-vI-1hD" secondAttribute="trailing" constant="16" id="pBZ-4h-x1k"/>
+                            <constraint firstItem="KhQ-Nu-i1e" firstAttribute="top" secondItem="yLa-PV-cbt" secondAttribute="top" id="qup-MC-YTb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="byM-Zw-pWI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SSl-Sr-bgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250.40000000000001" y="706.59670164917543"/>
+        </scene>
+        <!--Page Intro View Controller-->
+        <scene sceneID="QVC-Ld-EFc">
+            <objects>
+                <viewController storyboardIdentifier="Step2ViewController" id="RcD-WT-9uH" customClass="PageIntroViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bJq-gp-gYd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg2" translatesAutoresizingMaskIntoConstraints="NO" id="y9M-Gv-Pu2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VPQ-5e-lAw">
+                                <rect key="frame" x="16" y="281" width="343" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies &amp; Series" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QjS-8P-Dkt">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The world’s most popular and authoritative source for movies and series." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pi-dl-F8T">
+                                        <rect key="frame" x="0.0" y="64" width="343" height="41"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GWK-qe-EeG" customClass="AssetButton" customModule="Movies" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.58039215690000001" blue="0.64705882349999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="nar-tt-3nD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <state key="normal" title="Explore Collection" image="arrow"/>
+                                <connections>
+                                    <action selector="exploreCollection:" destination="RcD-WT-9uH" eventType="touchUpInside" id="WN5-mc-BiQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VPQ-5e-lAw" firstAttribute="centerY" secondItem="bJq-gp-gYd" secondAttribute="centerY" id="1V9-0h-7Hg"/>
+                            <constraint firstItem="VPQ-5e-lAw" firstAttribute="leading" secondItem="zrz-mc-Zmx" secondAttribute="leading" constant="16" id="EU7-YE-FPn"/>
+                            <constraint firstItem="y9M-Gv-Pu2" firstAttribute="leading" secondItem="zrz-mc-Zmx" secondAttribute="leading" id="G58-5O-Byj"/>
+                            <constraint firstItem="zrz-mc-Zmx" firstAttribute="bottom" secondItem="GWK-qe-EeG" secondAttribute="bottom" constant="20" id="Kid-9a-IWs"/>
+                            <constraint firstItem="VPQ-5e-lAw" firstAttribute="centerX" secondItem="bJq-gp-gYd" secondAttribute="centerX" id="VPs-cs-hP8"/>
+                            <constraint firstItem="zrz-mc-Zmx" firstAttribute="trailing" secondItem="VPQ-5e-lAw" secondAttribute="trailing" constant="16" id="ZAJ-TI-Vzz"/>
+                            <constraint firstItem="GWK-qe-EeG" firstAttribute="leading" secondItem="zrz-mc-Zmx" secondAttribute="leading" constant="16" id="ZnO-LM-ycz"/>
+                            <constraint firstItem="y9M-Gv-Pu2" firstAttribute="bottom" secondItem="zrz-mc-Zmx" secondAttribute="bottom" id="cq7-EG-f1q"/>
+                            <constraint firstItem="y9M-Gv-Pu2" firstAttribute="top" secondItem="bJq-gp-gYd" secondAttribute="top" id="dYA-DC-Rh1"/>
+                            <constraint firstItem="zrz-mc-Zmx" firstAttribute="trailing" secondItem="GWK-qe-EeG" secondAttribute="trailing" constant="16" id="u5J-pD-4PE"/>
+                            <constraint firstItem="y9M-Gv-Pu2" firstAttribute="trailing" secondItem="zrz-mc-Zmx" secondAttribute="trailing" id="vpx-qf-jBg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zrz-mc-Zmx"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b6d-To-BAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="462" y="707"/>
+        </scene>
+        <!--Page Intro View Controller-->
+        <scene sceneID="PPn-my-7aQ">
+            <objects>
+                <viewController storyboardIdentifier="Step3ViewController" id="OAk-o9-pQs" customClass="PageIntroViewController" customModule="Movies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3id-KR-XRQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg3" translatesAutoresizingMaskIntoConstraints="NO" id="Mqy-1a-529">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="12O-yy-2TZ">
+                                <rect key="frame" x="16" y="281" width="343" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies &amp; Series" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EML-ZV-OIm">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="48"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The world’s most popular and authoritative source for movies and series." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glG-RY-CKm">
+                                        <rect key="frame" x="0.0" y="64" width="343" height="41"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xyp-DQ-kMp" customClass="AssetButton" customModule="Movies" customModuleProvider="target">
+                                <rect key="frame" x="16" y="602" width="343" height="45"/>
+                                <color key="backgroundColor" red="0.0078431372550000003" green="0.58039215690000001" blue="0.64705882349999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ncT-al-4Kr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
+                                <state key="normal" title="Explore Collection" image="arrow"/>
+                                <connections>
+                                    <action selector="exploreCollection:" destination="OAk-o9-pQs" eventType="touchUpInside" id="tuq-jL-QXo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mqy-1a-529" firstAttribute="trailing" secondItem="N7g-Iw-bxU" secondAttribute="trailing" id="4tm-hD-bMZ"/>
+                            <constraint firstItem="N7g-Iw-bxU" firstAttribute="trailing" secondItem="xyp-DQ-kMp" secondAttribute="trailing" constant="16" id="5iK-Dc-udB"/>
+                            <constraint firstItem="12O-yy-2TZ" firstAttribute="centerY" secondItem="3id-KR-XRQ" secondAttribute="centerY" id="AKe-Xv-kAJ"/>
+                            <constraint firstItem="12O-yy-2TZ" firstAttribute="centerX" secondItem="3id-KR-XRQ" secondAttribute="centerX" id="Eh8-2w-dkp"/>
+                            <constraint firstItem="N7g-Iw-bxU" firstAttribute="trailing" secondItem="12O-yy-2TZ" secondAttribute="trailing" constant="16" id="Gqf-Gb-6zb"/>
+                            <constraint firstItem="xyp-DQ-kMp" firstAttribute="leading" secondItem="N7g-Iw-bxU" secondAttribute="leading" constant="16" id="Hqz-EJ-odr"/>
+                            <constraint firstItem="N7g-Iw-bxU" firstAttribute="bottom" secondItem="xyp-DQ-kMp" secondAttribute="bottom" constant="20" id="Rpg-tW-91M"/>
+                            <constraint firstItem="12O-yy-2TZ" firstAttribute="leading" secondItem="N7g-Iw-bxU" secondAttribute="leading" constant="16" id="Tfm-7k-BPI"/>
+                            <constraint firstItem="Mqy-1a-529" firstAttribute="top" secondItem="3id-KR-XRQ" secondAttribute="top" id="WyJ-J2-POt"/>
+                            <constraint firstItem="Mqy-1a-529" firstAttribute="leading" secondItem="N7g-Iw-bxU" secondAttribute="leading" id="ohf-Zf-WZx"/>
+                            <constraint firstItem="Mqy-1a-529" firstAttribute="bottom" secondItem="N7g-Iw-bxU" secondAttribute="bottom" id="vv2-8G-hh2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="N7g-Iw-bxU"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPk-vx-KkZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="707"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LbO-R0-gPY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JiB-nM-7iM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ByX-QT-4qT">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6VW-OA-AAP" kind="relationship" relationship="rootViewController" id="Wns-wJ-k5X"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsc-TW-dgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-105" y="29"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow" width="12" height="19"/>
+        <image name="bg1" width="375" height="812"/>
+        <image name="bg2" width="375" height="812"/>
+        <image name="bg3" width="375" height="812"/>
+    </resources>
+</document>

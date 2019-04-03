@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ses-3S-zDh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Genres-->
+        <scene sceneID="OlR-gn-C6C">
+            <objects>
+                <viewController id="s5a-gX-LSg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CaG-5w-m1b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zEU-eI-Yf7"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Genres" image="genre" id="6Xc-Mg-VHa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GfI-rJ-jEj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-34" y="-248"/>
+        </scene>
+        <!--Artists-->
+        <scene sceneID="EFs-UC-ESr">
+            <objects>
+                <viewController id="epY-W8-9sn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bIF-9X-LMK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XQZ-4z-aJ7"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Artists" image="artist" id="rYN-Na-BxS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wb6-Fm-P6y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-34" y="512"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="SY0-6W-evX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Discover" id="xG1-dF-2mH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="N3I-cr-bjT"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hMy-ew-W2b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-364" y="-784"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="VEU-m5-pAO">
+            <objects>
+                <tabBarController id="Ses-3S-zDh" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="flQ-gm-CfC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.0078431372550000003" green="0.58039215690000001" blue="0.64705882349999999" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xG1-dF-2mH" kind="relationship" relationship="viewControllers" id="qhT-hi-VRs"/>
+                        <segue destination="s5a-gX-LSg" kind="relationship" relationship="viewControllers" id="1hF-b1-XZe"/>
+                        <segue destination="epY-W8-9sn" kind="relationship" relationship="viewControllers" id="ZC5-kR-fcN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7N6-QB-rdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-920" y="-247"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="artist" width="25" height="25"/>
+        <image name="genre" width="35" height="15"/>
+    </resources>
+</document>
