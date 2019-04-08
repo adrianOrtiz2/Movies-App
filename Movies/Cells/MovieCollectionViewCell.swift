@@ -10,6 +10,11 @@ import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet weak var duration: UILabel!
+    @IBOutlet weak var skeleton: SkeletonView!
+    
     static let cellIdentifier = "MovieCollectionViewCell"
 
     override func awakeFromNib() {
@@ -17,4 +22,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    func configureCell(with viewModel: MovieCellViewModel) {
+        movieTitle.text = viewModel.title
+        duration.text = viewModel.releaseDate
+        image.downloadImage(from: viewModel.image)
+//        skeleton.startAnimating()
+    }
 }

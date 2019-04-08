@@ -16,4 +16,16 @@ struct MovieCellViewModel {
         return 1
     }
     
+    var title: String {
+        return movie.title
+    }
+    
+    var releaseDate: String {
+        return movie.releaseDate
+    }
+    
+    var image: String {
+        return movie.image
+    }
+    
 }

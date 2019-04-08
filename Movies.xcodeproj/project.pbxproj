@@ -36,6 +36,10 @@
 		477DD6FF224BF9F90006ADAA /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477DD6FD224BF9F90006ADAA /* MovieCollectionViewCell.swift */; };
 		477DD700224BF9F90006ADAA /* MovieCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 477DD6FE224BF9F90006ADAA /* MovieCollectionViewCell.xib */; };
 		477DD702224C011A0006ADAA /* MovieSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477DD701224C011A0006ADAA /* MovieSectionViewModel.swift */; };
+		4798D30F225B982A008B7FDB /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4798D30E225B982A008B7FDB /* SkeletonView.swift */; };
+		4798D312225BBBA3008B7FDB /* SkeletonAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4798D311225BBBA3008B7FDB /* SkeletonAnimation.swift */; };
+		4798D314225BBBD1008B7FDB /* SkeletonAnimationHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4798D313225BBBD1008B7FDB /* SkeletonAnimationHolder.swift */; };
+		4798D317225BC2BE008B7FDB /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4798D316225BC2BE008B7FDB /* UIView.swift */; };
 		643F9EE2D7571AFAFE585493 /* Pods_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94E3FA2EB662B9F9107D949 /* Pods_Movies.framework */; };
 		64417F9EDC98925ADC21F07A /* Pods_MoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 402180B0808B6264C199225F /* Pods_MoviesTests.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +98,10 @@
 		477DD6FD224BF9F90006ADAA /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		477DD6FE224BF9F90006ADAA /* MovieCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCollectionViewCell.xib; sourceTree = "<group>"; };
 		477DD701224C011A0006ADAA /* MovieSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSectionViewModel.swift; sourceTree = "<group>"; };
+		4798D30E225B982A008B7FDB /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		4798D311225BBBA3008B7FDB /* SkeletonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAnimation.swift; sourceTree = "<group>"; };
+		4798D313225BBBD1008B7FDB /* SkeletonAnimationHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonAnimationHolder.swift; sourceTree = "<group>"; };
+		4798D316225BC2BE008B7FDB /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		5519E1BE2CBC618023C46132 /* Pods-MoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoviesTests/Pods-MoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		99447F138F4B70ED6A0F6EC2 /* Pods-MoviesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoviesTests/Pods-MoviesTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB9F502BBF4B8607498150EA /* Pods-MoviesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +175,8 @@
 		471F5530224A935C00CE4C37 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				4798D315225BC2AC008B7FDB /* Extensions */,
+				4798D310225BBB8F008B7FDB /* Protocols */,
 				47157831224BF2180049D869 /* Cells */,
 				471F5572224AD33E00CE4C37 /* Networking */,
 				471F5567224A9C2D00CE4C37 /* CustomComponents */,
@@ -224,6 +234,7 @@
 			children = (
 				471F5589224AE48500CE4C37 /* MovieModel.swift */,
 				471F558B224AE5CD00CE4C37 /* MoviesResponse.swift */,
+				4798D313225BBBD1008B7FDB /* SkeletonAnimationHolder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				471F5568224A9C4400CE4C37 /* AssetButton.swift */,
+				4798D30E225B982A008B7FDB /* SkeletonView.swift */,
 			);
 			path = CustomComponents;
 			sourceTree = "<group>";
@@ -275,6 +287,22 @@
 				471F5583224ADF4F00CE4C37 /* CodableInit.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		4798D310225BBB8F008B7FDB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4798D311225BBBA3008B7FDB /* SkeletonAnimation.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		4798D315225BC2AC008B7FDB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4798D316225BC2BE008B7FDB /* UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C68B60984CA984B6DBDA4612 /* Pods */ = {
@@ -534,11 +562,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				471F558A224AE48500CE4C37 /* MovieModel.swift in Sources */,
+				4798D30F225B982A008B7FDB /* SkeletonView.swift in Sources */,
 				471F5584224ADF4F00CE4C37 /* CodableInit.swift in Sources */,
 				471F558C224AE5CD00CE4C37 /* MoviesResponse.swift in Sources */,
 				471F557B224AD9BF00CE4C37 /* ServerPaths.swift in Sources */,
 				471F5582224ADDB300CE4C37 /* HandleAlamoResponse.swift in Sources */,
 				471F556D224AA18F00CE4C37 /* PageIntroViewController.swift in Sources */,
+				4798D317225BC2BE008B7FDB /* UIView.swift in Sources */,
 				47157834224BF24E0049D869 /* MovieTableViewCell.swift in Sources */,
 				471F5574224AD39200CE4C37 /* URLRequestBuilder.swift in Sources */,
 				477DD702224C011A0006ADAA /* MovieSectionViewModel.swift in Sources */,
@@ -547,11 +577,13 @@
 				471F5580224ADCE000CE4C37 /* ServerResponse.swift in Sources */,
 				471F5579224AD85200CE4C37 /* MoviesRequest.swift in Sources */,
 				471F5532224A935C00CE4C37 /* AppDelegate.swift in Sources */,
+				4798D314225BBBD1008B7FDB /* SkeletonAnimationHolder.swift in Sources */,
 				471F5586224AE37200CE4C37 /* DiscoverViewController.swift in Sources */,
 				471F5564224A93BF00CE4C37 /* IntroViewController.swift in Sources */,
 				477DD6FF224BF9F90006ADAA /* MovieCollectionViewCell.swift in Sources */,
 				471F5569224A9C4400CE4C37 /* AssetButton.swift in Sources */,
 				471F5588224AE38400CE4C37 /* DiscoverViewModel.swift in Sources */,
+				4798D312225BBBA3008B7FDB /* SkeletonAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
