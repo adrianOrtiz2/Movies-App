@@ -10,15 +10,12 @@ import Foundation
 
 class DiscoverViewModel {
     
-    private var moviesSections: [MovieSectionViewModel] = []
-    private let completationHandler: () -> Void
+    var moviesSections: Bindable<[MovieSectionViewModel]> = Bindable([])
     
-    init(completationHandler: @escaping () -> Void) {
-        self.completationHandler = completationHandler
-    }
+    private let apiRepository = ApiMoviesRepository()
     
     var numberOfSections: Int {
-        return moviesSections.count
+        return moviesSections.value.count
     }
     
     var numberOfRowsInSection: Int {
@@ -26,22 +23,31 @@ class DiscoverViewModel {
     }
     
     func getRecentMovies() {
-        MoviesRequest.upcoming.send(MoviesResponse.self) { [weak self] (response) in
+        apiRepository.getRecentMovies().observe { [weak self] (response) in
             switch response {
             case .failure(let error):
-                print(error?.localizedDescription)
-                break
+                    print(error.localizedDescription)
             case .success(let value):
                 let section = MovieSectionViewModel(sectionName: "Most popular", movies: value.results.map{ MovieCellViewModel(movie: $0) })
-                self?.moviesSections.append(section)
-                self?.completationHandler()
-                break
+                self?.moviesSections.value.append(section)
             }
         }
+        
+//        MoviesRequest.upcoming.send(MoviesResponse.self) { [weak self] (response) in
+//            switch response {
+//            case .failure(let error):
+//                print(error?.localizedDescription ?? "")
+//                break
+//            case .success(let value):
+//                let section = MovieSectionViewModel(sectionName: "Most popular", movies: value.results.map{ MovieCellViewModel(movie: $0) })
+//                self?.moviesSections.value.append(section)
+//                break
+//            }
+//        }
     }
     
     func getViewModelCell(at position: Int) -> MovieSectionViewModel {
-        return moviesSections[position]
+        return moviesSections.value[position]
     }
     
 }

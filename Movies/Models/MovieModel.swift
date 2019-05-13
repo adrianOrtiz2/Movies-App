@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct MovieModel: Codable, CodableInit {
+struct MovieModel: Codable {
     
     let id: Int
     let video: Bool

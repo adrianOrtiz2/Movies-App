@@ -10,19 +10,24 @@ import UIKit
 
 class DiscoverViewController: UIViewController {
     
+    private lazy var binding: Bindable<DiscoverViewModel> = {
+        return Bindable(viewModel)
+    }()
+    
     private lazy var viewModel: DiscoverViewModel = {
-        return DiscoverViewModel(completationHandler: { [weak self] () in
-            self?.tableView.reloadData()
-        })
+        return DiscoverViewModel()
     }()
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: MovieTableViewCell.cellIdentifier)
         // Do any additional setup after loading the view.
         viewModel.getRecentMovies()
+        viewModel.moviesSections.bind { [unowned self] _ in
+            self.tableView.reloadData()
+        }
     }
     
 
@@ -50,7 +55,7 @@ extension DiscoverViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.cellIdentifier, for: indexPath) as? MovieTableViewCell else {
-            return UITableViewCell()
+            fatalError("Not expected cell")
         }
         cell.configureCell(with: viewModel.getViewModelCell(at: indexPath.section))
         return cell

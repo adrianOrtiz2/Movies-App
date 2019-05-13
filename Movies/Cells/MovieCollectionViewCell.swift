@@ -8,14 +8,12 @@
 
 import UIKit
 
-class MovieCollectionViewCell: UICollectionViewCell {
+class MovieCollectionViewCell: UICollectionViewCell, NibLodableView, ReusableView  {
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var duration: UILabel!
     @IBOutlet weak var skeleton: SkeletonView!
-    
-    static let cellIdentifier = "MovieCollectionViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()

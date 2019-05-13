@@ -13,12 +13,12 @@ class MovieTableViewCell: UITableViewCell {
     static let cellIdentifier = "movieTableViewCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
-    private var viewModel: MovieSectionViewModel? = nil
+    private var viewModel: Bindable<MovieSectionViewModel>?
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.cellIdentifier)
+        collectionView.register(MovieCollectionViewCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -29,8 +29,10 @@ class MovieTableViewCell: UITableViewCell {
     }
     
     func configureCell(with vm: MovieSectionViewModel) {
-        viewModel = vm
-        collectionView.reloadData()
+        viewModel = Bindable(vm)
+        viewModel?.bind(listener: {[weak self] _ in
+            self?.collectionView.reloadData()
+        })
     }
     
 }
@@ -38,17 +40,17 @@ class MovieTableViewCell: UITableViewCell {
 extension MovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let viewModel = viewModel else {
-            return 1
-        }
-        return viewModel.numberOfRowsInSection
+        guard let viewModel = viewModel else { return 0 }
+        return viewModel.value.numberOfRowsInSection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.cellIdentifier, for: indexPath) as? MovieCollectionViewCell,
-            let vm = viewModel?.movies[indexPath.row] else {
-            return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MovieCollectionViewCell
+        
+        guard let vm = viewModel?.value.movies[indexPath.row] else {
+            fatalError("")
         }
+
         cell.configureCell(with: vm)
         return cell
     }
