@@ -11,8 +11,14 @@ import Foundation
 extension Endpoint {
     
     static func popular() -> Endpoint {
-        return Endpoint(path: "/3/movie/popular", queryItems: [
-            URLQueryItem(name: "api_key", value: "76167e0900ebd22b448cb7775ab2c446")
-            ], method: .get)
+        return Endpoint(path: "/3/movie/popular", method: .get)
+    }
+    
+    static func upcoming() -> Endpoint {
+        return Endpoint(path: "/3/movie/upcoming", method: .get)
+    }
+    
+    static func searchMovies(_ query: String) -> Endpoint {
+        return Endpoint(path: "/3/search/movie", method: .get, bodyParams: nil, headers: nil, queryParams: [URLQueryItem(name: "query", value: query)])
     }
 }

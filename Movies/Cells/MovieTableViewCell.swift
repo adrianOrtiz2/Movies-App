@@ -48,7 +48,7 @@ extension MovieTableViewCell: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MovieCollectionViewCell
         
         guard let vm = viewModel?.value.movies[indexPath.row] else {
-            fatalError("")
+            fatalError("Unexpected view model")
         }
 
         cell.configureCell(with: vm)

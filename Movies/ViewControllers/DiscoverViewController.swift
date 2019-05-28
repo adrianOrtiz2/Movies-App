@@ -24,7 +24,7 @@ class DiscoverViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil), forCellReuseIdentifier: MovieTableViewCell.cellIdentifier)
         // Do any additional setup after loading the view.
-        viewModel.getRecentMovies()
+        viewModel.getHomeMovies()
         viewModel.moviesSections.bind { [unowned self] _ in
             self.tableView.reloadData()
         }
@@ -61,5 +61,8 @@ extension DiscoverViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
     
 }

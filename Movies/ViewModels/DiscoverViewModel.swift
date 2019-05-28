@@ -22,28 +22,27 @@ class DiscoverViewModel {
         return 1
     }
     
-    func getRecentMovies() {
+    func getHomeMovies() {
         apiRepository.getRecentMovies().observe { [weak self] (response) in
             switch response {
             case .failure(let error):
                     print(error.localizedDescription)
+            case .success(let value):
+                let section = MovieSectionViewModel(sectionName: "Most recent", movies: value.results.map{ MovieCellViewModel(movie: $0) })
+                self?.moviesSections.value.append(section)
+            }
+        }
+        
+        apiRepository.getPopularMovies().observe {[weak self] (response) in
+            switch response {
+            case .failure(let error):
+                print(error.localizedDescription)
             case .success(let value):
                 let section = MovieSectionViewModel(sectionName: "Most popular", movies: value.results.map{ MovieCellViewModel(movie: $0) })
                 self?.moviesSections.value.append(section)
             }
         }
         
-//        MoviesRequest.upcoming.send(MoviesResponse.self) { [weak self] (response) in
-//            switch response {
-//            case .failure(let error):
-//                print(error?.localizedDescription ?? "")
-//                break
-//            case .success(let value):
-//                let section = MovieSectionViewModel(sectionName: "Most popular", movies: value.results.map{ MovieCellViewModel(movie: $0) })
-//                self?.moviesSections.value.append(section)
-//                break
-//            }
-//        }
     }
     
     func getViewModelCell(at position: Int) -> MovieSectionViewModel {

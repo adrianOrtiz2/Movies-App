@@ -6,7 +6,7 @@
 //  Copyright © 2019 Adrian Ortiz. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Future<Value> {
     
@@ -88,6 +88,17 @@ extension Future where Value == Data {
     func decoded<NextValue: Decodable>() -> Future<NextValue> {
         return transformed {
             try JSONDecoder().decode(NextValue.self, from: $0.get())
+        }
+    }
+}
+
+extension Future where Value == NSData {
+    func decodeImage() -> Future<UIImage> {
+        return transformed {
+            guard let image = try UIImage(data: Data(referencing: $0.get())) else {
+                throw EndpointError.invalidURL
+            }
+            return image
         }
     }
 }

@@ -11,6 +11,7 @@ import Foundation
 struct MovieCellViewModel {
     
     let movie: MovieModel
+    let repository = CommonRepository()
     
     var numberOfItemsInSection: Int {
         return 1
@@ -26,6 +27,10 @@ struct MovieCellViewModel {
     
     var image: String {
         return movie.image
+    }
+    
+    func downloadImage() -> Future<NSData> {
+        return repository.downloadImage(movie.image)
     }
     
 }

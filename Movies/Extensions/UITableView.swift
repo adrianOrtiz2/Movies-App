@@ -17,7 +17,7 @@ extension UITableView {
     
     func dequeueReusableCell<T: UITableViewCell & NibLodableView & ReusableView>(forIndexPath indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
-            fatalError("")
+            fatalError("Unexpected cell")
         }
         return cell
     }

@@ -23,7 +23,14 @@ class MovieCollectionViewCell: UICollectionViewCell, NibLodableView, ReusableVie
     func configureCell(with viewModel: MovieCellViewModel) {
         movieTitle.text = viewModel.title
         duration.text = viewModel.releaseDate
-        image.downloadImage(from: viewModel.image)
+        viewModel.downloadImage().decodeImage().observe { [weak self] (result) in
+            switch result {
+            case .success(let img):
+                self?.image.image = img
+            case .failure:
+                self?.image.image = UIImage(named: "broken")
+            }
+        }
 //        skeleton.startAnimating()
     }
 }
